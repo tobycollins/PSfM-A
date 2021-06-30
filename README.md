@@ -13,13 +13,13 @@ Matlab implementation of the 2017 PAMI paper "Planar Structure-from-Motion with 
 
   title={Planar Structure-from-Motion with Affine Camera Models: Closed-Form Solutions, Ambiguities and Degeneracy Analysis}, 
 
-  year={2017},
-
   volume={39},
 
   number={6},
 
   pages={1237-1255},
+  
+  year={2017},
 
   doi={10.1109/TPAMI.2016.2578333}}
   
