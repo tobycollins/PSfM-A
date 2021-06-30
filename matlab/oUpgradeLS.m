@@ -1,4 +1,4 @@
-function [Xs,Ws] = closedFormUpgrade(As)
+function [Xs,Ws] = oUpgradeLS(As)
 
 M=size(As,3);
 B = zeros(M,4);

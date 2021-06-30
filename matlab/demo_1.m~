@@ -1,11 +1,4 @@
 function demo_1()
-%a simple demo that 
-%1) creates a simulated scene with co-planar points, camera poses and point
-%correspondences
-%2) Solves plane-bases SfM with the ortographic camera according to the
-%PAMI paper
-%3) evaluates structure and pose errors.
-
 
 %define scene simulation parameters:
 sceneOpts.M = 10; %number of views
@@ -41,7 +34,7 @@ ShatAligned(3,:) = 0;
 %evaluate camera pose errors
 [RNorms,tNorms] = sceneErrorL2(ShatAligned,Rhat,that,Sgt,Rgt,Tgt);
 
-%if all is good, these assertions should pass
+%if all is good, these assertions shou
 assert(structErr < 1e-6);
 assert(norm(RNorms) < 1e-6);
 assert(norm(tNorms) < 1e-6);
