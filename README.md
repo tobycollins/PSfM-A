@@ -44,13 +44,7 @@ Matlab implementation of the 2017 PAMI paper "Planar Structure-from-Motion with 
   
   url       = {https://doi.org/10.1007/s10851-018-0794-0},
   
-  doi       = {10.1007/s10851-018-0794-0},
-  
-  timestamp = {Mon, 08 Jun 2020 22:22:00 +0200},
-  
-  biburl    = {https://dblp.org/rec/journals/jmiv/BartoliC18.bib},
-  
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  doi       = {10.1007/s10851-018-0794-0}
 }
 
 
