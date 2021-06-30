@@ -24,7 +24,7 @@ Matlab implementation of the 2017 PAMI paper "Planar Structure-from-Motion with 
   doi={10.1109/TPAMI.2016.2578333}}
   
 
-## The follow-up paper with an improved closed-form solution to camera resection
+## A follow-up paper with an improved closed-form solution to camera resection
 
 @article{DBLP:journals/jmiv/BartoliC18,
   author    = {Adrien Bartoli and
