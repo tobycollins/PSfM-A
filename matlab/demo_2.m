@@ -12,6 +12,7 @@ sceneOpts.maxTilt = 80; % maximum tilt angle of structure in each view (degrees)
 sceneOpts.colinearThresh = 0.05; % prevents structure that are very colinear. Implemented with e2/e1 > colinearThresh where (e1, e2) are the PCA eigenvalues of the structure points
 
 sigmas = linspace(0,0.1,10);
+numberOfTrials = 50; % for each sigma, multiple trials are run, with each trial corresponding to a different random scene
 SErrAll = [];
 RErrAll = [];
 tErrAll = [];
