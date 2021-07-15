@@ -30,7 +30,7 @@ for s=sigmas
         %(Sgt) and a set of observed points in each image (qs):
         [Rgt,Tgt,Sgt,qs] = generateRandomScene(sceneOpts);
         
-        %perform 2D affine factorization ofpoint observatioin matrix:
+        %perform 2D affine factorization of point observation matrix:
         [Qmat,AFactor,SFactor,As] = affineFactorize2D(qs);
         
         %find orthographic camera least-squares upgrade solutions:
