@@ -24,7 +24,7 @@ for s=sigmas
     Rerr = [];
     tErr = [];
     
-    for j=1:50
+    for j=1:numberOfTrials
         
         %generate the scene as a set of camera poses (Rgt, Tgt), a structure matrix
         %(Sgt) and a set of observed points in each image (qs):
