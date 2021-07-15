@@ -18,7 +18,7 @@ sceneOpts.colinearThresh = 0.05; % prevents structure that are very colinear. Im
 %(Sgt) and a set of observed points in each image (qs):
 [Rgt,Tgt,Sgt,qs] = generateRandomScene(sceneOpts);
 
-%perform 2D affine factorization ofpoint observatioin matrix:
+%perform 2D affine factorization of point observatioin matrix:
 [Qmat,AFactor,SFactor,As] = affineFactorize2D(qs);
 
 %find orthographic camera least-squares upgrade solutions:
@@ -31,7 +31,7 @@ Xs = uniqueUpgrades(Xs);
 %Find the upgraded structure matrix that best aligns with Sgt
 [Shat,structErr] = getBestStructureWithGT(Xs,SFactor,Sgt);
 
-%align upgraded structure matreix with Sgt:
+%align upgraded structure matrix with Sgt:
 [~,ShatAligned,~]=absor(Shat(1:2,:),Sgt(1:2,:),'doScale',false);
 ShatAligned(3,:) = 0;
 
