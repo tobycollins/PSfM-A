@@ -1,7 +1,12 @@
 function [A,MM,M_mat] = ptCorrespond2Affine_2D(ps1,ps2)
+%computes the least squares affine motion from 2D points ps1 to ps2
+%assumes ps1 and ps2 are of size 2xM where M is the number of points.
+
+ps1 = ps1';
+ps2 = ps2';
 numPts = size(ps1,1);
 
-if numPts == 3;
+if numPts == 3
      %exact solution
     px1=ps1(1,1);
     py1=ps1(1,2);
