@@ -1,7 +1,9 @@
 function demo_3(motionEstimationMode)
 %a simple demo that shows how to use PSfM-O to reconstruct surface normals
-%using inter-image affine motion. In this demo, the motion is computed with respect to a reference image
-%(without loss of generality, this is the first image).
+%using inter-image affine motion. In this demo, the motion is computed either using a reference view (by setting motionEstimationMode = 'oneReferenceView') 
+%or by computing affine motion between all pairs of images (by setting motionEstimationMode = 'allPairs') 
+%For motionEstimationMode = 'oneReferenceView', the first image is used as the reference. But any view can be used, simply by reordering the views so that the
+%reference view is the first view.
 
 %first we need to create a simulatated scene:
 sceneOpts.M = 3; %number of views
@@ -23,7 +25,7 @@ switch motionEstimationMode
         %i. Affine motion matrices are computed in homogeneous coordinates.
         AFactor = estimateAffineMotionFrom1stView(qs);
 
-    case 'interViewMotion'
+    case 'allPairs'
         %estimate the affine motion between all views, then factorizes it
         %with a rank-2 decomposition
         AsCell = estimateAffineMotionBetweenAllViews(qs);
@@ -41,12 +43,12 @@ switch motionEstimationMode
             cnt = cnt + 2;
         end
     otherwise
-        disp('demo_3 requires one argument (specifying how the affine motion factor is computed. Use either oneReferenceView or interViewMotion')
+        disp('demo_3 requires one argument (specifying how the affine motion factor is computed. Use either oneReferenceView or allPairs')
 end
 
 
-%Now that we have the affine motion from 1st view, we can reconstruct the
-%normals. Note that there will be two normal solutions for each view (flip ambiguity).
+%Now that we have an affine motion factor (AsMat), we can compute the surface normals. 
+%Note that there will be two normal solutions for each view (flip ambiguity).
 %In total, if there are u upgrade matrices, there will be u x 2^M normal
 %solutions, where M is the number of views.
 
